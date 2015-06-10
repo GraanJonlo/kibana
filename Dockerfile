@@ -6,7 +6,7 @@ RUN \
   apt-get update && apt-get upgrade -y && apt-get install -y \
   wget
 
-ENV KIBANA_VERSION 4.0.2
+ENV KIBANA_VERSION 4.0.3
 
 RUN \
   cd /tmp && \
