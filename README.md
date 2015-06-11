@@ -10,7 +10,7 @@ Kibana makes it easy to understand large volumes of data. Its simple, browser-ba
 
 ## start an kibana instance
 
-    docker run --name kibana [-p 5601:5601] [--link elasticsearch:es] -d graanjonlo/kibana[:tag]
+    docker run --name kibana [-p 5601:5601] [-v /some/directory:/data] [--link elasticsearch:es] -d graanjonlo/kibana[:tag]
 
-This image includes `EXPOSE 5601`, so standard container linking will make it automatically available to the linked containers.  The above example shows it being linked to an already running elasticsearch instance.
+This image includes `EXPOSE 5601`, so standard container linking will make it automatically available to the linked containers.  The above example shows it being linked to an already running elasticsearch instance. Volume `/data` is also available and is where the log file is written.
 

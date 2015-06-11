@@ -6,7 +6,7 @@ RUN \
   apt-get update && apt-get upgrade -y && apt-get install -y \
   wget
 
-ENV KIBANA_VERSION 4.0.3
+ENV KIBANA_VERSION 4.1.0
 
 RUN \
   cd /tmp && \
@@ -20,6 +20,8 @@ RUN \
 RUN mkdir -p /etc/service/kibana
 ADD kibana.sh /etc/service/kibana/run
 ADD kibana.yml /kibana/config/kibana.yml
+
+VOLUME ["/data"]
 
 EXPOSE 5601
 
