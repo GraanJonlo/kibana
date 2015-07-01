@@ -6,7 +6,7 @@ RUN \
   apt-get update && apt-get upgrade -y && apt-get install -y \
   wget
 
-ENV KIBANA_VERSION 4.1.0
+ENV KIBANA_VERSION 4.1.1
 
 RUN \
   cd /tmp && \
