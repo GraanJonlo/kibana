@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.16
+FROM phusion/baseimage:0.9.17
 
 MAINTAINER Andy Grant <andy.a.grant@gmail.com>
 
@@ -6,7 +6,7 @@ RUN \
   apt-get update && apt-get upgrade -y && apt-get install -y \
   wget
 
-ENV KIBANA_VERSION 4.1.1
+ENV KIBANA_VERSION 4.1.2
 
 RUN \
   cd /tmp && \
