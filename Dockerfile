@@ -1,12 +1,17 @@
-FROM phusion/baseimage:0.9.17
+FROM phusion/baseimage:0.9.18
 
 MAINTAINER Andy Grant <andy.a.grant@gmail.com>
+
+ADD https://github.com/kelseyhightower/confd/releases/download/v0.11.0/confd-0.11.0-linux-amd64 /usr/local/bin/confd
+RUN chmod +x /usr/local/bin/confd
 
 RUN \
   apt-get update && apt-get upgrade -y && apt-get install -y \
   wget
 
-ENV KIBANA_VERSION 4.1.2
+RUN rm -rf /var/lib/apt/lists/*
+
+ENV KIBANA_VERSION 4.4.2
 
 RUN \
   cd /tmp && \
@@ -19,11 +24,13 @@ RUN \
 
 RUN mkdir -p /etc/service/kibana
 ADD kibana.sh /etc/service/kibana/run
-ADD kibana.yml /kibana/config/kibana.yml
+
+ADD kibana.toml /etc/confd/conf.d/kibana.toml
+ADD kibana.yml.tmpl /etc/confd/templates/kibana.yml.tmpl
 
 VOLUME ["/data"]
+VOLUME ["/var/logs/kibana"]
 
 EXPOSE 5601
 
 CMD ["/sbin/my_init", "--quiet"]
-

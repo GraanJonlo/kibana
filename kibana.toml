@@ -1,0 +1,6 @@
+[template]
+src = "kibana.yml.tmpl"
+dest = "/kibana/config/kibana.yml"
+keys = [
+    "ES_HOST",
+]
