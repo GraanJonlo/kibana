@@ -11,7 +11,7 @@ RUN \
 
 RUN rm -rf /var/lib/apt/lists/*
 
-ENV KIBANA_VERSION 4.4.2
+ENV KIBANA_VERSION 4.5.0
 
 RUN \
   cd /tmp && \
@@ -28,7 +28,6 @@ ADD kibana.sh /etc/service/kibana/run
 ADD kibana.toml /etc/confd/conf.d/kibana.toml
 ADD kibana.yml.tmpl /etc/confd/templates/kibana.yml.tmpl
 
-VOLUME ["/data"]
 VOLUME ["/var/logs/kibana"]
 
 EXPOSE 5601
