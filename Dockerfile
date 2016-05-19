@@ -1,12 +1,17 @@
-FROM phusion/baseimage:0.9.17
+FROM phusion/baseimage:0.9.18
 
 MAINTAINER Andy Grant <andy.a.grant@gmail.com>
 
+ADD https://github.com/kelseyhightower/confd/releases/download/v0.11.0/confd-0.11.0-linux-amd64 /usr/local/bin/confd
+RUN chmod +x /usr/local/bin/confd
+
+RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold"
+
 RUN \
-  apt-get update && apt-get upgrade -y && apt-get install -y \
+  apt-get install -y \
   wget
 
-ENV KIBANA_VERSION 4.1.2
+ENV KIBANA_VERSION 4.1.7
 
 RUN \
   cd /tmp && \
@@ -26,4 +31,3 @@ VOLUME ["/data"]
 EXPOSE 5601
 
 CMD ["/sbin/my_init", "--quiet"]
-
