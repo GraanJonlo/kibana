@@ -11,7 +11,9 @@ RUN \
   apt-get install -y \
   wget
 
-ENV KIBANA_VERSION 4.1.7
+RUN rm -rf /var/lib/apt/lists/*
+
+ENV KIBANA_VERSION 4.1.8
 
 RUN \
   cd /tmp && \
