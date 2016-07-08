@@ -13,7 +13,7 @@ RUN \
 
 RUN rm -rf /var/lib/apt/lists/*
 
-ENV KIBANA_VERSION 4.1.8
+ENV KIBANA_VERSION 4.1.9
 
 RUN \
   cd /tmp && \
