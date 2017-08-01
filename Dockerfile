@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.19
+FROM phusion/baseimage:0.9.22
 
 MAINTAINER Andy Grant <andy.a.grant@gmail.com>
 
@@ -11,7 +11,7 @@ RUN \
 
 RUN rm -rf /var/lib/apt/lists/*
 
-ENV KIBANA_VERSION 4.6.4
+ENV KIBANA_VERSION 4.6.5
 
 RUN \
   cd /tmp && \
