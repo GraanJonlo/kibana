@@ -11,11 +11,11 @@ RUN \
 
 RUN rm -rf /var/lib/apt/lists/*
 
-ENV KIBANA_VERSION 4.6.5
+ENV KIBANA_VERSION 5.6.3
 
 RUN \
   cd /tmp && \
-  wget -O kibana.tar.gz https://download.elastic.co/kibana/kibana/kibana-$KIBANA_VERSION-linux-x86_64.tar.gz && \
+  wget -O kibana.tar.gz https://artifacts.elastic.co/downloads/kibana/kibana-$KIBANA_VERSION-linux-x86_64.tar.gz && \
   tar xvzf kibana.tar.gz && \
   mv kibana-$KIBANA_VERSION-linux-x86_64 /kibana && \
   groupadd kibana && \
