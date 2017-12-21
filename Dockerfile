@@ -11,7 +11,7 @@ RUN \
 
 RUN rm -rf /var/lib/apt/lists/*
 
-ENV KIBANA_VERSION 6.0.1
+ENV KIBANA_VERSION 6.1.0
 
 RUN \
   cd /tmp && \
