@@ -1,8 +1,8 @@
-FROM phusion/baseimage:0.9.22
+FROM phusion/baseimage:0.10.0
 
 MAINTAINER Andy Grant <andy.a.grant@gmail.com>
 
-ADD https://github.com/kelseyhightower/confd/releases/download/v0.13.0/confd-0.13.0-linux-amd64 /usr/local/bin/confd
+ADD https://github.com/kelseyhightower/confd/releases/download/v0.15.0/confd-0.15.0-linux-amd64 /usr/local/bin/confd
 RUN chmod +x /usr/local/bin/confd
 
 RUN \
@@ -11,7 +11,7 @@ RUN \
 
 RUN rm -rf /var/lib/apt/lists/*
 
-ENV KIBANA_VERSION 5.6.5
+ENV KIBANA_VERSION 5.6.6
 
 RUN \
   cd /tmp && \
