@@ -1,7 +1,7 @@
 version: '2'
 services:
   kibana:
-    image: graanjonlo/kibana:6.2.3
+    image: graanjonlo/kibana:6.2.4
     ports:
      - "5601:5601"
     expose:
